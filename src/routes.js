@@ -8,6 +8,16 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('app', {
       url: '/',
-      component: 'app'
+      component: 'booksFinder'
+    })
+    .state('details', {
+      url: '/details/:id',
+      component: 'bookDetails',
+      resolve: {
+        /** @ngInject */
+        book($stateParams, BookService) {
+          return BookService.findById($stateParams.id);
+        }
+      }
     });
 }

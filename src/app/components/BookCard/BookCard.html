@@ -1,5 +1,7 @@
 <md-card flex class="{{::$ctrl.styles.card}}" layout="column">
-  <img ng-src="{{::$ctrl.book.cover}}" class="{{::$ctrl.styles.cover}} md-card-image" alt="Washed Out">
+  <a ng-src="{{::$ctrl.book.coverLink}}" ui-sref="details({id: $ctrl.book.id})">
+    <img ng-src="{{::$ctrl.book.cover}}" class="{{::$ctrl.styles.cover}} md-card-image" alt="{{::$ctrl.book.name}}">
+  </a>
   <md-card-title>
     <md-card-title-text>
       <span class="md-headline">{{::$ctrl.book.name}}</span>

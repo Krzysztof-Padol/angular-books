@@ -1,0 +1,49 @@
+$toolbar-height: 290px;
+
+.toolbar {
+  height: $toolbar-height;
+  min-height: $toolbar-height;
+  max-height: $toolbar-height;
+
+  h1 {
+    margin: 10px 0;
+  }
+
+  h4 {
+    margin: 5px 0;
+  }
+}
+
+.content {
+  margin-top: -20px;
+  z-index: 10;
+}
+
+$avatar-size: 150px;
+
+.avatar {
+  text-align: center;
+
+  hr {
+    width: $avatar-size * 1.4;
+  }
+
+  img {
+    height: $avatar-size;
+    width: $avatar-size;
+    border-radius: 50%;
+    margin-top: 50px;
+  }
+}
+
+$similar-section-bg-color: #e1e1e1;
+
+.similar {
+  padding: 25px;
+  
+  h2, h4 {
+    margin: 10px 0;
+  }
+
+  background-color: $similar-section-bg-color;
+}
