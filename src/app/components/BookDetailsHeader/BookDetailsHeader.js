@@ -18,5 +18,5 @@ export const bookDetailsHeader = {
 export const moduleName = 'components.bookDetailsHeader';
 
 export default angular
-  .module(moduleName, ['angularMoment'])
+  .module(moduleName, [])
   .component('bookDetailsHeader', bookDetailsHeader);

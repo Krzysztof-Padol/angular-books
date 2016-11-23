@@ -1,11 +1,14 @@
-class BookIntroductionController {
-  constructor() {
-    this.text = 'My brand new component!';
-  }
-}
+import template from './BookIntroduction.html';
 
 export const bookIntroduction = {
-  templateUrl: 'app/components/BookIntroduction/BookIntroduction.html',
-  controller: BookIntroductionController
+  template,
+  bindings: {
+    introduction: '<'
+  }
 };
 
+export const moduleName = 'components.bookIntroduction';
+
+export default angular
+  .module(moduleName, [])
+  .component('bookIntroduction', bookIntroduction);

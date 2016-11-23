@@ -1,4 +1,5 @@
 import bookDetailsHeaderModule from './../../components/BookDetailsHeader/BookDetailsHeader.js';
+import bookIntroductionModule from './../../components/BookIntroduction/BookIntroduction.js';
 import template from './BookDetails.html';
 import styles from './BookDetails.scss';
 
@@ -21,6 +22,7 @@ export const moduleName = 'containers.bookDetails';
 
 export default angular
   .module(moduleName, [
-    bookDetailsHeaderModule.name
+    bookDetailsHeaderModule.name,
+    bookIntroductionModule.name
   ])
   .component('bookDetails', bookDetails);
