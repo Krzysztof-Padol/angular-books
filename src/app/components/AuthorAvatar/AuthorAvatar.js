@@ -1,11 +1,22 @@
+import template from './AuthorAvatar.html';
+import styles from './AuthorAvatar.scss';
+
 class AuthorAvatarController {
   constructor() {
-    this.text = 'My brand new component!';
+    this.styles = styles;
   }
 }
 
 export const authorAvatar = {
-  templateUrl: 'app/components/AuthorAvatar/AuthorAvatar.html',
-  controller: AuthorAvatarController
+  template,
+  controller: AuthorAvatarController,
+  bindings: {
+    author: '<'
+  }
 };
 
+export const moduleName = 'components.authorAvatar';
+
+export default angular
+  .module(moduleName, [])
+  .component('authorAvatar', authorAvatar);

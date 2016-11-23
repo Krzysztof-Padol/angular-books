@@ -1,0 +1,16 @@
+$avatar-size: 150px;
+
+.avatar {
+  text-align: center;
+
+  hr {
+    width: $avatar-size * 1.4;
+  }
+
+  img {
+    height: $avatar-size;
+    width: $avatar-size;
+    border-radius: 50%;
+    margin-top: 50px;
+  }
+}
