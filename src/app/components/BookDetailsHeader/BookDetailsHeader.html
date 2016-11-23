@@ -1,0 +1,13 @@
+<div ng-class="$ctrl.styles.headerDetails" layout="column" layout-fill layout-padding layout-align="start center">
+  <header layout="column" layout-fill layout-align="center start">
+    <h1>{{ ::$ctrl.book.name }}</h1>
+    <h4>by {{::$ctrl.book.author.name}}</h3>
+    <p class="md-subhead">
+      {{ ::$ctrl.book.description }}
+    </p>
+    <div layout="row">
+      <md-button ui-sref="app">{{ ::$ctrl.book.genre.category }}</md-button>
+      <md-button ui-sref="app">{{ ::$ctrl.book.genre.name }}</md-button>
+    </div>
+  </header>
+</div>

@@ -32,6 +32,13 @@ function getSortFn(getValueFn = a => a) {
   };
 }
 
+function shuffle(a) {
+  for (let i = a.length; i; i--) {
+    const j = Math.floor(Math.random() * i);
+    [a[i - 1], a[j]] = [a[j], a[i - 1]];
+  }
+}
+
 function getUnique(data, getValueFn = a => a) {
   const values = [];
 
@@ -75,6 +82,20 @@ export class BookService {
     return booksSet.find(book => {
       return book.id === id;
     });
+  }
+
+  getSimilarToId(id, count) {
+    let booksSet = this.data.slice();
+    const book = this.findById(id);
+
+    booksSet = booksSet.filter(book => {
+      return book.id !== id;
+    });
+
+    const similarBooks = filterData(booksSet, undefined, book.genre.name);
+    shuffle(similarBooks);
+
+    return similarBooks.slice(0, count);
   }
 
   getData(page = 0, itemsPerPage = 10, filter = false, search = false) {

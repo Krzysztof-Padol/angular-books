@@ -17,6 +17,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         /** @ngInject */
         book($stateParams, BookService) {
           return BookService.findById($stateParams.id);
+        },
+        /** @ngInject */
+        similar($stateParams, BookService) {
+          return BookService.getSimilarToId($stateParams.id, 3);
         }
       }
     });

@@ -1,3 +1,4 @@
+import bookDetailsHeaderModule from './../../components/BookDetailsHeader/BookDetailsHeader.js';
 import template from './BookDetails.html';
 import styles from './BookDetails.scss';
 
@@ -9,12 +10,17 @@ class BookDetailsController {
 
 export const bookDetails = {
   template,
-  bindings: {book: '<'},
+  bindings: {
+    book: '<',
+    similar: '<'
+  },
   controller: BookDetailsController
 };
 
 export const moduleName = 'containers.bookDetails';
 
 export default angular
-  .module(moduleName, [])
+  .module(moduleName, [
+    bookDetailsHeaderModule.name
+  ])
   .component('bookDetails', bookDetails);

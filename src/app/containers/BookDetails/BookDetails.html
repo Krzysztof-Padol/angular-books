@@ -1,18 +1,6 @@
 <md-toolbar class="{{ ::$ctrl.styles.toolbar }}">
   <div layout="row" layout-align="center start">
-    <div flex="100" flex-gt-sm="80" flex-gt-md="60" layout="column" layout-fill layout-padding layout-align="start center">
-      <header layout="column" layout-fill layout-align="center start">
-        <h1>{{ ::$ctrl.book.name }}</h1>
-        <h4>by {{::$ctrl.book.author.name}}</h3>
-        <p class="md-subhead">
-          {{ ::$ctrl.book.description }}
-        </p>
-        <div layout="row">
-          <md-button ui-sref="app">{{ ::$ctrl.book.genre.category }}</md-button>
-          <md-button ui-sref="app">{{ ::$ctrl.book.genre.name }}</md-button>
-        </div>
-      </header>
-    </div>
+    <book-details-header flex="100" flex-gt-sm="80" flex-gt-md="60" data-book="$ctrl.book"></book-details-header>
   </div>
 </md-toolbar>
 <div layout="row" layout-align="center start">
@@ -35,9 +23,7 @@
       <h2 class="md-display-1">Similar reading</h1>
       <h4 class="md-subhead">If you liked this book, we recommend you check out these emerging titles.</h3>
       <div flex="80" layout="row" layout-align="center start" layout-fill layout-wrap>
-        <book-card flex="100" flex-gt-sm="50" flex-gt-md="30" data-book="$ctrl.book"></book-card>
-        <book-card flex="100" flex-gt-sm="50" flex-gt-md="30" data-book="$ctrl.book"></book-card>
-        <book-card flex="100" flex-gt-sm="50" flex-gt-md="30" data-book="$ctrl.book"></book-card>
+        <book-card ng-repeat="book in $ctrl.similar track by book.id" flex="100" flex-gt-sm="50" flex-gt-md="30" data-book="book"></book-card>
       </div>
     </section>
   </md-content>
