@@ -5,13 +5,13 @@
   <div flex layout="column" layout-align="start center">
     <md-content layout="row" layout-fill layout-align="center start">
       <div flex="80" layout="row" layout-align="center start" layout-fill layout-wrap>
-        <book-card flex="100" flex-gt-sm="50" flex-gt-md="50" ng-repeat="book in $ctrl.books track by book.id" data-book="book"></book-card>
+        <book-card flex="100" flex-gt-sm="50" flex-gt-md="30" ng-repeat="book in $ctrl.books track by book.id" data-book="book"></book-card>
       </div>
     </md-content>
   </div>
   <div flex="15">
     <md-toolbar class="md-tall" layout-align="space-around center">
-      <pagination data-pages-number="$ctrl.pages" data-on-page-change="$ctrl.handlePageChange(currentPage)"></pagination>
+      <pagination data-current-page="$ctrl.state.currentPage" data-pages-number="$ctrl.pages" data-on-page-change="$ctrl.handlePageChange(currentPage)"></pagination>
     </md-toolbar>
   </div>
 </div>

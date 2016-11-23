@@ -5,9 +5,8 @@ import styles from './BooksFinder.scss';
 
 class BooksFinderController {
   /** @ngInject */
-  constructor(BookService, $window) {
+  constructor(BookService) {
     this.BookService = BookService;
-    this.$window = $window;
 
     this.styles = styles;
 
@@ -22,7 +21,6 @@ class BooksFinderController {
   }
 
   getData() {
-    this.$window.scrollTo(0, 0);
     const data = this.BookService.getData(this.state.currentPage, 6, this.state.filters.filter, this.state.filters.search);
 
     this.books = data.elements;
@@ -30,6 +28,7 @@ class BooksFinderController {
   }
 
   handleFilterChange(filters) {
+    this.state.currentPage = 0;
     this.state.filters = filters;
     this.getData();
   }
