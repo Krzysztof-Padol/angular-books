@@ -1,9 +1,10 @@
+import paginationModule from './../../components/Pagination/Pagination.js';
+
 class BooksFinderController {
   /** @ngInject */
   constructor(BookService) {
     this.BookService = BookService;
 
-    this.currentPage = 0;
     this.books = [];
     this.pages = 0;
 
@@ -13,25 +14,25 @@ class BooksFinderController {
     this.getData();
   }
 
-  getData() {
-    const data = this.BookService.getData(this.currentPage, 10, this.filter, this.search);
+  getData(currentPage = 0) {
+    const data = this.BookService.getData(currentPage, 10, this.filter, this.search);
 
     this.books = data.elements;
     this.pages = data.pages;
   }
 
-  prevPage() {
-    this.currentPage--;
-    this.getData();
-  }
-
-  nextPage() {
-    this.currentPage++;
-    this.getData();
+  onPageChange(currentPage) {
+    this.getData(currentPage);
   }
 }
 
-export const booksFinder = {
+const booksFinder = {
   templateUrl: 'app/containers/BooksFinder/BooksFinder.html',
   controller: BooksFinderController
 };
+
+export const moduleName = 'containers.booksFinder';
+
+export default angular
+  .module(moduleName, [paginationModule.name])
+  .component('booksFinder', booksFinder);

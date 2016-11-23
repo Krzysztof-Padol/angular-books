@@ -27,11 +27,5 @@
     <div ng-repeat="book in $ctrl.books track by $index">{{book.name}}</div>
   </div>
 
-  <md-button class="md-icon-button md-accent" ng-click="$ctrl.prevPage()" aria-label="Previous page">
-    <md-icon>keyboard_arrow_left</md-icon>
-  </md-button>
-    {{$ctrl.currentPage + 1}} / {{$ctrl.pages}}
-  <md-button class="md-icon-button md-accent" ng-click="$ctrl.nextPage()" aria-label="Next page">
-    <md-icon>keyboard_arrow_right</md-icon>
-  </md-button>
+  <pagination data-current-page="$ctrl.currentPage" data-pages-number="$ctrl.pages" data-on-page-change="$ctrl.onPageChange(currentPage)"></pagination>
 </div>
