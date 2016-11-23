@@ -15,7 +15,7 @@ class PaginationController {
   }
 
   prevPage() {
-    if(this.isPrev()) {
+    if (this.isPrev()) {
       this.currentPage--;
       if (this.onPageChange) {
         this.onPageChange({
@@ -26,7 +26,7 @@ class PaginationController {
   }
 
   nextPage() {
-    if(this.isNext()) {
+    if (this.isNext()) {
       this.currentPage++;
       if (this.onPageChange) {
         this.onPageChange({
