@@ -10,15 +10,3 @@ $toolbar-height: 290px;
   margin-top: -20px;
   z-index: 10;
 }
-
-$similar-section-bg-color: #e1e1e1;
-
-.similar {
-  padding: 25px;
-
-  h2, h4 {
-    margin: 10px 0;
-  }
-
-  background-color: $similar-section-bg-color;
-}

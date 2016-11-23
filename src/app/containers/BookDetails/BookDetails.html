@@ -7,13 +7,6 @@
   <md-content style="margin-top: -20px" ng-class="$ctrl.styles.content" class="md-whiteframe-5dp" flex="100" flex-gt-sm="80" flex-gt-md="60" layout="column" layout-fill layout-align="start center">
     <book-introduction data-introduction="$ctrl.book.introduction"></book-introduction>
     <author-avatar data-author="$ctrl.book.author"></author-avatar>
-
-    <section ng-class="$ctrl.styles.similar" layout="column" layout-fill  layout-align="start center">
-      <h2 class="md-display-1">Similar reading</h1>
-      <h4 class="md-subhead">If you liked this book, we recommend you check out these emerging titles.</h3>
-      <div flex="80" layout="row" layout-align="center start" layout-fill layout-wrap>
-        <book-card ng-repeat="book in $ctrl.similar track by book.id" flex="100" flex-gt-sm="50" flex-gt-md="30" data-book="book"></book-card>
-      </div>
-    </section>
+    <similar-books data-similar="$ctrl.similar"></similar-books>
   </md-content>
 </div>

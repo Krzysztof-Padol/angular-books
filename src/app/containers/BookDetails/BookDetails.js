@@ -1,6 +1,7 @@
 import authorAvatarModule from './../../components/AuthorAvatar/AuthorAvatar.js';
 import bookDetailsHeaderModule from './../../components/BookDetailsHeader/BookDetailsHeader.js';
 import bookIntroductionModule from './../../components/BookIntroduction/BookIntroduction.js';
+import similarBooksModule from './../../components/SimilarBooks/SimilarBooks.js';
 import template from './BookDetails.html';
 import styles from './BookDetails.scss';
 
@@ -25,6 +26,7 @@ export default angular
   .module(moduleName, [
     bookDetailsHeaderModule.name,
     bookIntroductionModule.name,
-    authorAvatarModule.name
+    authorAvatarModule.name,
+    similarBooksModule.name
   ])
   .component('bookDetails', bookDetails);
