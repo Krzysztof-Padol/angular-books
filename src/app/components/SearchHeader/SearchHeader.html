@@ -1,7 +1,7 @@
 <div layout="row" layout-fill layout-align="space-around center" layout-padding layout-margin>
   <md-input-container flex>
     <label>Find me the best</label>
-    <md-select ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.filter.category">
+    <md-select ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.category">
       <md-option value="">
         None
       </md-option>
@@ -13,7 +13,7 @@
 
   <md-input-container flex>
     <label>Books about</label>
-    <md-select ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.filter.genre">
+    <md-select ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.genre">
       <md-option value="">
         None
       </md-option>

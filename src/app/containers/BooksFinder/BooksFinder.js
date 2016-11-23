@@ -25,7 +25,7 @@ class BooksFinderController {
   }
 
   getData() {
-    const data = this.BookService.getData(this.state.currentPage, this.ITEMS_PER_PAGE, this.state.filters.filter, this.state.filters.search);
+    const data = this.BookService.getData(this.state.currentPage, this.ITEMS_PER_PAGE, this.state.filters, this.state.filters.search);
 
     this.books = data.elements;
     this.pages = data.pages;
@@ -57,5 +57,5 @@ export default angular
     bookCardModule.name,
     'ngMaterial'
   ])
-  .constant('ITEMS_PER_PAGE', ITEMS_PER_PAGE);
+  .constant('ITEMS_PER_PAGE', ITEMS_PER_PAGE)
   .component('booksFinder', booksFinder);
