@@ -93,6 +93,17 @@ describe('Books service', () => {
 
       expect(value.elements.length).toBe(expected);
     });
+
+    it('should find proper elements for given filter genre and category values', () => {
+      const filter = {
+        category: 'Fiction',
+        name: 'Fantasy'
+      };
+      const value = BookService.getData(0, 10, filter);
+      const expected = 1;
+
+      expect(value.elements.length).toBe(expected);
+    });
   });
 
   describe('search getData method', () => {
@@ -113,7 +124,7 @@ describe('Books service', () => {
     });
 
     it('should find all elements with contains a in name of autor and title', () => {
-      const search = 'a';
+      const search = 'A';
       const value = BookService.getData(0, 10, false, search);
       const expected = 4;
 

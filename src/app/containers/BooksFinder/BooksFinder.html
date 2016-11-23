@@ -1,25 +1,37 @@
-<div flex layout="column" layout-fill>
+<div>
   <md-input-container>
     <label>Find me the best</label>
-    <md-select ng-model="user.state">
-      <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-        {{state.abbrev}}
+    <md-select ng-change="$ctrl.getData()" ng-model="$ctrl.filter.category">
+      <md-option ng-repeat="category in $ctrl.categorySet track by $index" value="{{category}}">
+        {{category}}
       </md-option>
     </md-select>
   </md-input-container>
 
-  <!-- <md-input-container>
+  <md-input-container>
     <label>Books about</label>
-    <md-select ng-model="user.state">
-      <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-        {{state.abbrev}}
+    <md-select ng-change="$ctrl.getData()" ng-model="$ctrl.filter.genre">
+      <md-option ng-repeat="genre in $ctrl.genreSet track by $index" value="{{genre}}">
+        {{genre}}
       </md-option>
     </md-select>
   </md-input-container>
 
   <md-input-container>
     <label>Search</label>
-    <input ng-model="user.address" type="text"/>
+    <input ng-change="$ctrl.getData()" ng-model="$ctrl.search" type="text"/>
     <md-icon>search</md-icon>
-  </md-input-container> -->
+  </md-input-container>
+
+  <div>
+    <div ng-repeat="book in $ctrl.books track by $index">{{book.name}}</div>
+  </div>
+
+  <md-button class="md-icon-button md-accent" ng-click="$ctrl.prevPage()" aria-label="Previous page">
+    <md-icon>keyboard_arrow_left</md-icon>
+  </md-button>
+    {{$ctrl.currentPage + 1}} / {{$ctrl.pages}}
+  <md-button class="md-icon-button md-accent" ng-click="$ctrl.nextPage()" aria-label="Next page">
+    <md-icon>keyboard_arrow_right</md-icon>
+  </md-button>
 </div>

@@ -6,13 +6,23 @@ export const initialBook = books.sort((bookA, bookB) => {
 
 function filterData(booksSet, category = '', genre = '') {
   return booksSet.filter(book => {
-    return book.genre.name === genre || book.genre.category === category;
+    let result = true;
+
+    if (genre.length) {
+      result = book.genre.name === genre;
+    }
+
+    if (category.length) {
+      result = result && book.genre.category === category;
+    }
+
+    return result;
   });
 }
 
 function searchData(booksSet, searchTxt) {
   return booksSet.filter(book => {
-    return book.name.indexOf(searchTxt) !== -1 || book.author.name.indexOf(searchTxt) !== -1;
+    return book.name.toLowerCase().includes(searchTxt.toLowerCase()) || book.author.name.toLowerCase().includes(searchTxt.toLowerCase());
   });
 }
 
