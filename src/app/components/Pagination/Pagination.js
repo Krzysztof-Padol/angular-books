@@ -14,25 +14,24 @@ class PaginationController {
     return this.currentPage < this.pagesNumber - 1;
   }
 
+  changePage(nextPage) {
+    this.currentPage = nextPage;
+    if (angular.isFunction(this.onPageChange)) {
+      this.onPageChange({
+        currentPage: this.currentPage
+      });
+    }
+  }
+
   prevPage() {
     if (this.isPrev()) {
-      this.currentPage--;
-      if (this.onPageChange) {
-        this.onPageChange({
-          currentPage: this.currentPage
-        });
-      }
+      this.changePage(this.currentPage - 1);
     }
   }
 
   nextPage() {
     if (this.isNext()) {
-      this.currentPage++;
-      if (this.onPageChange) {
-        this.onPageChange({
-          currentPage: this.currentPage
-        });
-      }
+      this.changePage(this.currentPage + 1);
     }
   }
 }

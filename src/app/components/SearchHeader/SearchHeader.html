@@ -1,0 +1,31 @@
+<div layout="row" layout-fill layout-align="center center" layout-padding layout-margin>
+  <md-input-container flex>
+    <label>Find me the best</label>
+    <md-select ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.filter.category">
+      <md-option value="">
+        None
+      </md-option>
+      <md-option ng-repeat="category in $ctrl.categories track by $index" value="{{category}}">
+        {{category}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container flex>
+    <label>Books about</label>
+    <md-select ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.filter.genre">
+      <md-option value="">
+        None
+      </md-option>
+      <md-option ng-repeat="genre in $ctrl.genres track by $index" value="{{genre}}">
+        {{genre}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container flex>
+    <label>Search</label>
+    <input ng-change="$ctrl.handleDataChange()" ng-model="$ctrl.filters.search" type="text"/>
+    <md-icon>search</md-icon>
+  </md-input-container>
+</div>

@@ -1,31 +1,36 @@
-<div>
-  <md-input-container>
-    <label>Find me the best</label>
-    <md-select ng-change="$ctrl.getData()" ng-model="$ctrl.filter.category">
-      <md-option ng-repeat="category in $ctrl.categorySet track by $index" value="{{category}}">
-        {{category}}
-      </md-option>
-    </md-select>
-  </md-input-container>
-
-  <md-input-container>
-    <label>Books about</label>
-    <md-select ng-change="$ctrl.getData()" ng-model="$ctrl.filter.genre">
-      <md-option ng-repeat="genre in $ctrl.genreSet track by $index" value="{{genre}}">
-        {{genre}}
-      </md-option>
-    </md-select>
-  </md-input-container>
-
-  <md-input-container>
-    <label>Search</label>
-    <input ng-change="$ctrl.getData()" ng-model="$ctrl.search" type="text"/>
-    <md-icon>search</md-icon>
-  </md-input-container>
-
-  <div>
-    <div ng-repeat="book in $ctrl.books track by $index">{{book.name}}</div>
+<div layout="column" layout-fill>
+  <div flex="20" style="background-color: #87CEFA;">
+    <search-header categories="$ctrl.categories" genres="$ctrl.genres" on-filter-change="$ctrl.handleFilterChange(filters)"></search-header>
   </div>
+  <div flex="80" style="background-color: #B0E2FF;">
+    <md-content flex layout="row" layout-wrap layout-align="space-around center">
+      <md-card ng-repeat="book in $ctrl.books track by book.id" flex="30" layout="column">
+        <img ng-src="{{book.cover}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{book.name}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="space-between center" class="md-padding">
+          <div layout="row" layout-align="center center">
+            <md-icon>favorite</md-icon>
+            <p class="md-body-1">213</p>
+          </div>
 
-  <pagination data-current-page="$ctrl.currentPage" data-pages-number="$ctrl.pages" data-on-page-change="$ctrl.onPageChange(currentPage)"></pagination>
+          <div layout="row" layout-align="center center">
+            <p class="md-body-1">3 days ago</p>
+          </div>
+        </md-card-actions>
+      </md-card>
+      <md-toolbar class="md-tall md-warn md-hue-3" layout-align="space-around center">
+        <pagination data-pages-number="$ctrl.pages" data-on-page-change="$ctrl.handlePageChange(currentPage)"></pagination>
+      </md-toolbar>
+    </md-content>
+  </div>
 </div>

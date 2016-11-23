@@ -1,28 +1,38 @@
 import paginationModule from './../../components/Pagination/Pagination.js';
+import searchHeaderModule from './../../components/SearchHeader/SearchHeader.js';
 
 class BooksFinderController {
   /** @ngInject */
-  constructor(BookService) {
+  constructor(BookService, $window) {
     this.BookService = BookService;
+    this.$window = $window;
 
-    this.books = [];
-    this.pages = 0;
-
-    this.genreSet = BookService.getAllGenre();
-    this.categorySet = BookService.getAllCategories();
+    this.genres = BookService.getAllGenre();
+    this.categories = BookService.getAllCategories();
+    this.state = {
+      currentPage: 0,
+      filters: {}
+    };
 
     this.getData();
   }
 
-  getData(currentPage = 0) {
-    const data = this.BookService.getData(currentPage, 10, this.filter, this.search);
+  getData() {
+    this.$window.scrollTo(0, 0);
+    const data = this.BookService.getData(this.state.currentPage, 6, this.state.filters.filter, this.state.filters.search);
 
     this.books = data.elements;
     this.pages = data.pages;
   }
 
-  onPageChange(currentPage) {
-    this.getData(currentPage);
+  handleFilterChange(filters) {
+    this.state.filters = filters;
+    this.getData();
+  }
+
+  handlePageChange(currentPage) {
+    this.state.currentPage = currentPage;
+    this.getData();
   }
 }
 
@@ -34,5 +44,8 @@ const booksFinder = {
 export const moduleName = 'containers.booksFinder';
 
 export default angular
-  .module(moduleName, [paginationModule.name])
+  .module(moduleName, [
+    paginationModule.name,
+    searchHeaderModule.name
+  ])
   .component('booksFinder', booksFinder);
