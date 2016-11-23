@@ -1,5 +1,7 @@
 import template from './SimilarBooks.html';
 import styles from './SimilarBooks.scss';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 class SimilarBooksController {
   constructor() {
@@ -18,5 +20,5 @@ export const similarBooks = {
 export const moduleName = 'components.similarBooks';
 
 export default angular
-  .module(moduleName, [])
+  .module(moduleName, ['ngMaterial'])
   .component('similarBooks', similarBooks);

@@ -5,8 +5,6 @@ import booksFinderModule from './app/containers/BooksFinder/BooksFinder.js';
 import bookDetailsModule from './app/containers/BookDetails/BookDetails.js';
 import bookServiceModule from './app/service/book/book.js';
 import 'angular-ui-router';
-import 'angular-material';
-import 'angular-material/angular-material.css';
 import routesConfig from './routes';
 
 import './index.scss';
@@ -15,7 +13,6 @@ export const app = 'books';
 
 const dependecies = [
   'ui.router',
-  'ngMaterial',
   bookServiceModule.name,
   booksFinderModule.name,
   bookDetailsModule.name

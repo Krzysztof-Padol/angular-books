@@ -1,4 +1,6 @@
 import template from './BookIntroduction.html';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 export const bookIntroduction = {
   template,
@@ -10,5 +12,5 @@ export const bookIntroduction = {
 export const moduleName = 'components.bookIntroduction';
 
 export default angular
-  .module(moduleName, [])
+  .module(moduleName, ['ngMaterial'])
   .component('bookIntroduction', bookIntroduction);

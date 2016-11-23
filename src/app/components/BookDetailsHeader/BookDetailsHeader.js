@@ -1,5 +1,7 @@
 import template from './BookDetailsHeader.html';
 import styles from './BookDetailsHeader.scss';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 class BookDetailsHeaderController {
   constructor() {
@@ -18,5 +20,5 @@ export const bookDetailsHeader = {
 export const moduleName = 'components.bookDetailsHeader';
 
 export default angular
-  .module(moduleName, [])
+  .module(moduleName, ['ngMaterial'])
   .component('bookDetailsHeader', bookDetailsHeader);

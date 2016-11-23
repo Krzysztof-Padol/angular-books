@@ -2,6 +2,8 @@ import paginationModule from './../../components/Pagination/Pagination.js';
 import searchHeaderModule from './../../components/SearchHeader/SearchHeader.js';
 import bookCardModule from './../../components/BookCard/BookCard.js';
 import styles from './BooksFinder.scss';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 class BooksFinderController {
   /** @ngInject */
@@ -50,6 +52,7 @@ export default angular
   .module(moduleName, [
     paginationModule.name,
     searchHeaderModule.name,
-    bookCardModule.name
+    bookCardModule.name,
+    'ngMaterial'
   ])
   .component('booksFinder', booksFinder);

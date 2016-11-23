@@ -1,5 +1,7 @@
 import angular from 'angular';
 import template from './SearchHeader.html';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 class SearchHeaderController {
   handleDataChange() {
@@ -24,5 +26,5 @@ export const searchHeader = {
 export const moduleName = 'components.searchHeader';
 
 export default angular
-  .module(moduleName, [])
+  .module(moduleName, ['ngMaterial'])
   .component('searchHeader', searchHeader);

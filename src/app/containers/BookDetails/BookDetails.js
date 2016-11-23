@@ -4,6 +4,8 @@ import bookIntroductionModule from './../../components/BookIntroduction/BookIntr
 import similarBooksModule from './../../components/SimilarBooks/SimilarBooks.js';
 import template from './BookDetails.html';
 import styles from './BookDetails.scss';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 class BookDetailsController {
   constructor() {
@@ -27,6 +29,7 @@ export default angular
     bookDetailsHeaderModule.name,
     bookIntroductionModule.name,
     authorAvatarModule.name,
-    similarBooksModule.name
+    similarBooksModule.name,
+    'ngMaterial'
   ])
   .component('bookDetails', bookDetails);

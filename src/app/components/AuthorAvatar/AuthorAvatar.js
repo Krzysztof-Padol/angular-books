@@ -1,5 +1,7 @@
 import template from './AuthorAvatar.html';
 import styles from './AuthorAvatar.scss';
+import 'angular-material';
+import 'angular-material/angular-material.css';
 
 class AuthorAvatarController {
   constructor() {
@@ -18,5 +20,5 @@ export const authorAvatar = {
 export const moduleName = 'components.authorAvatar';
 
 export default angular
-  .module(moduleName, [])
+  .module(moduleName, ['ngMaterial'])
   .component('authorAvatar', authorAvatar);
