@@ -1,6 +1,5 @@
 import angular from 'angular';
 
-import {App} from './app/containers/App/App.js';
 import booksFinderModule from './app/containers/BooksFinder/BooksFinder.js';
 import bookDetailsModule from './app/containers/BookDetails/BookDetails.js';
 import bookServiceModule from './app/service/book/book.js';
@@ -20,5 +19,4 @@ const dependecies = [
 
 angular
   .module(app, dependecies)
-  .config(routesConfig)
-  .component('app', App);
+  .config(routesConfig);

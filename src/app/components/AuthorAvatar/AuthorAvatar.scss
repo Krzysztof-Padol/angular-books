@@ -1,4 +1,5 @@
 $avatar-size: 150px;
+$avatar-margin: 50px;
 
 .avatar {
   text-align: center;
@@ -11,6 +12,6 @@ $avatar-size: 150px;
     height: $avatar-size;
     width: $avatar-size;
     border-radius: 50%;
-    margin-top: 50px;
+    margin-top: $avatar-margin;
   }
 }

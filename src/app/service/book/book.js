@@ -1,4 +1,5 @@
 import books from './book.json';
+import {ITEMS_PER_PAGE} from './../../constants/Pagination.js';
 
 export const initialBook = books.sort((bookA, bookB) => {
   return bookA.id - bookB.id;
@@ -98,7 +99,7 @@ export class BookService {
     return similarBooks.slice(0, count);
   }
 
-  getData(page = 0, itemsPerPage = 10, filter = false, search = false) {
+  getData(page = 0, itemsPerPage = ITEMS_PER_PAGE, filter = false, search = false) {
     let booksSet = this.data.slice();
 
     booksSet.sort(getSortFn(a => a.name));
