@@ -1,4 +1,4 @@
-export default routesConfig;
+import {SIMILAR_BOOKS} from './app/constants/Books.js';
 
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -20,8 +20,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         /** @ngInject */
         similar($stateParams, BookService) {
-          return BookService.getSimilarToId($stateParams.id, 3);
+          return BookService.getSimilarToId($stateParams.id, SIMILAR_BOOKS);
         }
       }
     });
 }
+
+export default routesConfig;
