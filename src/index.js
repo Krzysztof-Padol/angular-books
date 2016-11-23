@@ -1,6 +1,8 @@
 import angular from 'angular';
 
-import {hello} from './app/hello';
+import {App} from './app/containers/App/App.js';
+import {booksFinder} from './app/containers/BooksFinder/BooksFinder.js';
+import {moduleName} from './app/service/book/book.js';
 import 'angular-ui-router';
 import 'angular-material';
 import 'angular-material/angular-material.css';
@@ -8,9 +10,10 @@ import routesConfig from './routes';
 
 import './index.scss';
 
-export const app = 'app';
+export const app = 'books';
 
 angular
-  .module(app, ['ui.router', 'ngMaterial'])
+  .module(app, ['ui.router', 'ngMaterial', moduleName])
   .config(routesConfig)
-  .component('app', hello);
+  .component('booksFinder', booksFinder)
+  .component('app', App);
