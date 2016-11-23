@@ -6,8 +6,8 @@
       {{ ::$ctrl.book.description }}
     </p>
     <div layout="row">
-      <md-button ui-sref="app">{{ ::$ctrl.book.genre.category }}</md-button>
-      <md-button ui-sref="app">{{ ::$ctrl.book.genre.name }}</md-button>
+      <md-button ui-sref="app({category: $ctrl.book.genre.category})">{{ ::$ctrl.book.genre.category }}</md-button>
+      <md-button ui-sref="app({genre: $ctrl.book.genre.name})">{{ ::$ctrl.book.genre.name }}</md-button>
     </div>
   </header>
 </div>
