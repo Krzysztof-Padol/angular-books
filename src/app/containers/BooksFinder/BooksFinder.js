@@ -1,11 +1,15 @@
 import paginationModule from './../../components/Pagination/Pagination.js';
 import searchHeaderModule from './../../components/SearchHeader/SearchHeader.js';
+import bookCardModule from './../../components/BookCard/BookCard.js';
+import styles from './BooksFinder.scss';
 
 class BooksFinderController {
   /** @ngInject */
   constructor(BookService, $window) {
     this.BookService = BookService;
     this.$window = $window;
+
+    this.styles = styles;
 
     this.genres = BookService.getAllGenre();
     this.categories = BookService.getAllCategories();
@@ -46,6 +50,7 @@ export const moduleName = 'containers.booksFinder';
 export default angular
   .module(moduleName, [
     paginationModule.name,
-    searchHeaderModule.name
+    searchHeaderModule.name,
+    bookCardModule.name
   ])
   .component('booksFinder', booksFinder);

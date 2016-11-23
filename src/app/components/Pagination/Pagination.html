@@ -1,7 +1,7 @@
 <md-button ng-style="{'visibility': $ctrl.isPrev() ? 'visible' : 'hidden'}" class="md-icon-button md-accent" ng-click="$ctrl.prevPage()" aria-label="Previous page">
   <md-icon>keyboard_arrow_left</md-icon>
 </md-button>
-<span class="pagination-info md-body-1">{{$ctrl.currentPage + 1}} / {{$ctrl.pagesNumber}}</span>
+<span class="pagination-info md-headline">{{$ctrl.currentPage + 1}} / {{$ctrl.pagesNumber}}</span>
 <md-button ng-style="{'visibility': $ctrl.isNext() ? 'visible' : 'hidden'}" class="md-icon-button md-accent" ng-click="$ctrl.nextPage()" aria-label="Next page">
   <md-icon>keyboard_arrow_right</md-icon>
 </md-button>

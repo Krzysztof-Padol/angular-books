@@ -1,0 +1,12 @@
+$width: 31%;
+$cover-height: 200px;
+
+.card {
+  // width: $width;
+  // float: left;
+}
+
+.cover {
+  height: $cover-height;
+  object-fit: cover;
+}

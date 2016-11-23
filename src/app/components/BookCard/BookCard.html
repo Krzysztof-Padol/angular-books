@@ -1,0 +1,23 @@
+<md-card flex class="{{::$ctrl.styles.card}}" layout="column">
+  <img ng-src="{{::$ctrl.book.cover}}" class="{{::$ctrl.styles.cover}} md-card-image" alt="Washed Out">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{::$ctrl.book.name}}</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <p>
+      by {{::$ctrl.book.author.name}}
+    </p>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="space-between center" class="md-padding">
+    <div layout="row" layout-align="center center">
+      <md-icon>favorite</md-icon>
+      <p class="md-body-1">{{::$ctrl.book.likes}}</p>
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <span class="md-body-1" am-time-ago="$ctrl.book.published"></span>
+    </div>
+  </md-card-actions>
+</md-card>
