@@ -8,6 +8,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('app', {
       url: '/?category&genre',
+      reloadOnSearch: false,
       component: 'booksFinder'
     })
     .state('details', {

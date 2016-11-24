@@ -18,6 +18,14 @@ class PaginationController {
     }
   }
 
+  $onChanges(changesObj) {
+    if (changesObj.currentPage && !changesObj.currentPage.isFirstChange()) {
+      if (changesObj.currentPage.currentValue === 0) {
+        this.updateRouting();
+      }
+    }
+  }
+
   isPrev() {
     return this.currentPage !== 0;
   }
